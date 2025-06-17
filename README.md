@@ -5,6 +5,8 @@ A fully functional VPC with isolated private instances
 A bastion host for secure access
 A load balancer exposing a demo app hosted in private subnets
 A scalable group of EC2 instances behind the ALB
+![image](https://github.com/user-attachments/assets/2546b3d7-e57d-41dd-8bcf-2e634f377834)
+
 
 
 # 1. VPC Setup
