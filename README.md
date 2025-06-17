@@ -69,12 +69,13 @@ Network Placement: Public subnet of same VPC
 Usage:
 
 Connect using:
-'''
+```
 ssh -i aws-login.pem ubuntu@<Bastion-Public-IP>
-'''
-'''
+```
+
+```
 scp -i aws-login.pem SpringbootApplication.pem ubuntu@<Public-IP>:/home/ubuntu
-'''
+```
 
 # 5. Deploy Static Web Page on Private EC2
 Connect via Bastion → Private IP
@@ -88,10 +89,9 @@ Example content:
 </html>
 # Start simple Python web server:
 
-'''
+```
 python3 -m http.server 8000
-
-'''
+```
 # 6. Application Load Balancer (ALB)
 Type: Internet-facing ALB
 
