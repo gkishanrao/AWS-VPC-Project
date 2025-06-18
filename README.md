@@ -33,10 +33,20 @@ VPC endpoints: None
 Create VPC
 
 
-# 2. Launch Template for Auto Scaling
-Name: aws-prod-example
+# 2. Go to Auto Scaling group 
+-Create Auto Scaling group
+
+-Create Launch Template
+Launch template name and description
+
+Template version description
+
+Launch template name - required
+: aws-prod-example
 
 Description: Proof of concept for app deployment
+
+Recently launched: free tier eligible
 
 Instance Type: (e.g., t2.micro)
 
@@ -46,9 +56,15 @@ Security Group: aws-prod-example
 
 All traffic allowed (⚠️ for demo only — restrict in production)
 
+ssh one
+
 Custom TCP: Port 8000
 
-VPC: aws-prod-example
+VPC: aws-prod-example(custom created)
+
+Create launch template
+
+
 
 # 3. Auto Scaling Group
 Name: aws-prod-example
