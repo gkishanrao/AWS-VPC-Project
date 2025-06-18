@@ -11,22 +11,19 @@ A scalable group of EC2 instances behind the ALB
 
 
 
-# 1. VPC Setup
-Name: aws-prod-example
+# 1. Create VPC
+Auto-generate: aws-prod-example
+Pv4 CIDR block:cidr
+IPv6 CIDR block:No IPv^ CIDR Block
+Tenancy :default
+Number of Availability Zones (AZs): 2
+Number of public subnets:2
+Number of private subnets:2
+NAT gateways ($): 1 per AZ
+VPC endpoints: None
+Create VPC
 
-Availability Zones: 2 (e.g., us-east-1a, us-east-1b)
 
-Subnets:
-
-Public: 2 (1 per AZ)
-
-Private: 2 (1 per AZ)
-
-Internet Gateway: 1 (attached to public subnets)
-
-NAT Gateways: 2 (1 per AZ for high availability)
-
-VPC Endpoints: None
 # 2. Launch Template for Auto Scaling
 Name: aws-prod-example
 
