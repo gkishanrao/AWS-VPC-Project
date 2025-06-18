@@ -16,7 +16,7 @@ Auto-generate: aws-prod-example
 
 Pv4 CIDR block:cidr
 
-IPv6 CIDR block:No IPv^ CIDR Block
+IPv6 CIDR block: No IPv^ CIDR Block
 
 Tenancy :default
 
