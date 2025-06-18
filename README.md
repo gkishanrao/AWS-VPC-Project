@@ -82,7 +82,7 @@ Scaling Policies: None   then Next--> next -->Creat Auto Scaling group
 
 Two EC2 instances have been successfully created in the private subnets of the VPC.
 Both instances have private IP addresses and are not directly accessible from the internet.
-They are intended to be accessed via a bastion host or through a load balancer in the public subnet.
+They are intended to be accessed via a bastion host.
 
 # 4. Bastion Host
 Name: bastion-host
