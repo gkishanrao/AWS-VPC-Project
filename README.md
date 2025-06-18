@@ -12,6 +12,7 @@ A scalable group of EC2 instances behind the ALB
 
 
 # 1. Create VPC
+Select: VPC and more
 Auto-generate: aws-prod-example
 
 Pv4 CIDR block:cidr
