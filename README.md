@@ -84,28 +84,41 @@ Two EC2 instances have been successfully created in the private subnets of the V
 Both instances have private IP addresses and are not directly accessible from the internet.
 They are intended to be accessed via a bastion host.
 
-# 4. Bastion Host
+# 4. Create EC2 instance 
 Name: bastion-host
+slect: ubuntu
 
 Key Pair: aws-login
+VPC: created one
 
 Security Group: allows SSH (port 22)
 
 Network Placement: Public subnet of same VPC
 
-Usage:
+public id: enable
+Launch instance
 
-Connect using:
+Private EC2 instances that don’t have a key pair attached can't be accessed directly via SSH. However, there's a secure workaround: copy the bastion host’s .pem key into the private instance through an SCP command after SSH’ing into the bastion
+
+Connect using: Commandline 
+```
+scp -i xxx.pem C:/Users/xxxx/Downloads/xxx.pem ubuntu@publicIP:/home/ubuntu
+```
+# To verify the copied file
 ```
 ssh -i aws-login.pem ubuntu@<Bastion-Public-IP>
+ls
 ```
+```
+scp -i xxx.pem ubuntu@private-ip
 
 ```
-scp -i aws-login.pem SpringbootApplication.pem ubuntu@<Public-IP>:/home/ubuntu
-```
+Now I am able to login private instance as well
+
 
 # 5. Deploy Static Web Page on Private EC2
 Connect via Bastion → Private IP
+vim index.html
 
 Example content:
 <!DOCTYPE html>
@@ -115,35 +128,65 @@ Example content:
 </body>
 </html>
 # Start simple Python web server:
-
 ```
 python3 -m http.server 8000
 ```
-# 6. Application Load Balancer (ALB)
-Type: Internet-facing ALB
 
+
+# 6. Create load balancer
+Application Load Balancer (ALB)
 Name: aws-prod-example
+
+Type: Internet-facing ALB
+Ipv4
 
 VPC: aws-prod-example
 
-AZ/Subnets: Public subnet 1 and 2
+AZ/Subnets: Public subnet 1 and Public subnet2
 
 Security Group: aws-prod-example
 
-Listener: HTTP on port 80
+Listener: HTTP on port 8000
 
-Target Group:
-
-Name: aws-prod-example
+# Target Group:
+Create target group
 
 Target Type: Instance
 
-Port: 8000
+Name: aws-prod-example
+
+Port: 80
 
 Instances: Private EC2s (exclude bastion)
 
 Health Check: HTTP on /
+Next
+Select: two private instances which is created
+Created target group
 
-Routing: Listener routes to above target group
+
+# 6. Create load balancer
+Application Load Balancer (ALB)
+Name: aws-prod-example
+
+Type: Internet-facing ALB
+Ipv4
+
+VPC: aws-prod-example
+
+AZ/Subnets: Public subnet 1 and Public subnet2
+
+Security Group: aws-prod-example
+
+Listener: HTTP 80
+ port 8000
+ Default action: selected Target group 
+ 
+created load balancer
+
+Then to verify using DNs name
+
+
+
 
 
