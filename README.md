@@ -13,14 +13,23 @@ A scalable group of EC2 instances behind the ALB
 
 # 1. Create VPC
 Auto-generate: aws-prod-example
+
 Pv4 CIDR block:cidr
+
 IPv6 CIDR block:No IPv^ CIDR Block
+
 Tenancy :default
+
 Number of Availability Zones (AZs): 2
+
 Number of public subnets:2
+
 Number of private subnets:2
+
 NAT gateways ($): 1 per AZ
+
 VPC endpoints: None
+
 Create VPC
 
 
