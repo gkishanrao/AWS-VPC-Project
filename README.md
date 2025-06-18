@@ -70,6 +70,7 @@ Name: aws-prod-example
 Launch Template: previously created
 
 Availability Zones: private-subnet-1 & private-subnet-2 in us-east-1a and us-east-1b
+Next -> No load  balancer -->   next
 
 Desired Capacity: 2
 
@@ -77,9 +78,11 @@ Min Size: 1
 
 Max Size: 4
 
-Load Balancer: Not attached (yet)
+Scaling Policies: None   then Next--> next -->Creat Auto Scaling group
 
-Scaling Policies: None (manual scaling)
+Two EC2 instances have been successfully created in the private subnets of the VPC.
+Both instances have private IP addresses and are not directly accessible from the internet.
+They are intended to be accessed via a bastion host or through a load balancer in the public subnet.
 
 # 4. Bastion Host
 Name: bastion-host
