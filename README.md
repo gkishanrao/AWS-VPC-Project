@@ -60,9 +60,7 @@ ssh one
 
 Custom TCP: Port 8000
 
-VPC: aws-prod-example(custom created)
-
-Create launch template
+VPC: aws-prod-example(custom created)--> # Create launch template
 
 
 
