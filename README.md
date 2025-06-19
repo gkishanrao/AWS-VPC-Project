@@ -189,8 +189,8 @@ Then to verify using DNs name
 
 
 
-#🛠️ VPC Architecture for a 2-Tier Highly Available and Scalable Application
-#📌 Design Overview
+# 🛠️ VPC Architecture for a 2-Tier Highly Available and Scalable Application
+# 📌 Design Overview
 In this scenario, we need to build a 2-tier architecture (Web + Application) that is highly available and scalable on AWS. Here’s how we would design the VPC architecture:
 
 ✅ Key Components
