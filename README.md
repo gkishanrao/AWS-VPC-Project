@@ -187,7 +187,10 @@ created load balancer
 
 Then to verify using DNs name
 
+```
 
+```
+# Ineterview FAQ
 
 # 🛠️ VPC Architecture for a 2-Tier Highly Available and Scalable Application
 # 📌 Design Overview
@@ -206,7 +209,7 @@ Private Subnets (in 2 AZs)
 
 For EC2 instances (App layer)
 
-Route through NAT Gateway in each AZ
+Route through NAT Gateway in each AZ(The NAT Gateway allows outbound internet access from private instances without exposing them directly to inbound internet traffic)
 
 Auto Scaling Group in private subnets
 
